@@ -21,8 +21,31 @@ import android.widget.ImageView;
 import android.widget.Toast;
 import android.widget.VideoView;
 
-public class MainActivity extends Activity {
+import org.opencv.android.BaseLoaderCallback;
+import org.opencv.android.LoaderCallbackInterface;
+import org.opencv.android.OpenCVLoader;
 
+public class MainActivity extends Activity {
+    private BaseLoaderCallback mLoaderCallback = new BaseLoaderCallback(this) {
+        @Override
+        public void onManagerConnected(int status) {
+            switch (status) {
+                case LoaderCallbackInterface.SUCCESS:
+                {
+                    Log.i("OPENCVV", "OpenCV loaded successfully");
+
+                    // Load native library after(!) OpenCV initialization
+                    System.loadLibrary("mixed_sample");
+
+                } break;
+                default:
+                {
+                    Log.i("OPENCVV", "OpenCV dsadsadas asdsad");
+                    super.onManagerConnected(status);
+                } break;
+            }
+        }
+    };
     // Activity request codes
     private static final int CAMERA_CAPTURE_IMAGE_REQUEST_CODE = 100;
     private static final int CAMERA_CAPTURE_VIDEO_REQUEST_CODE = 200;
