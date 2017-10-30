@@ -20,17 +20,29 @@
         android:layout_marginTop="16dp"
         android:onClick="pickImageWithPath"
         android:text="Path" />
-
-    <ImageView
-        android:id="@+id/display_image"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Process"
+        android:onClick="goPro"
         android:id="@+id/mean_shift" />
+
+    <ImageView
+        android:id="@+id/display_image"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        />
+
+    <VideoView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:id="@+id/videoPreview"/>
+
+
+
+
 
 
 </LinearLayout>

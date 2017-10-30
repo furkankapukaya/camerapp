@@ -5,7 +5,7 @@ android {
     buildToolsVersion "25.0.3"
     defaultConfig {
         applicationId "com.example.cameraapp_1"
-        minSdkVersion 19
+        minSdkVersion 16
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -25,8 +25,20 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    compile project(':openCVLibrary330')
+    compile files('libs/videoinput.jar')
+    compile files('libs/videoinput-windows-x86_64.jar')
+    compile files('libs/videoinput-windows-x86.jar')
+    compile files('libs/videoinput-platform.jar')
+    compile files('libs/ffmpeg-android-x86.jar')
+    compile files('libs/ffmpeg-android-arm.jar')
+    compile files('libs/ffmpeg.jar')
+    compile files('libs/javacv-platform.jar')
+    compile files('libs/javacv.jar')
+    compile files('libs/javacpp.jar')
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
-    compile project(':openCVLibrary330')
+    compile files('libs/jcodec-0.2.1.jar')
+    compile files('libs/jcodec-android-0.2.1.jar')
 }
