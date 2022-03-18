@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">CameraApp_1</string>
-    <string name="camera_button">&#xf030; Take Picture</string>
-    <string name="app_name1">Pick an Image From SD Card Gallery and Display</string>
-
-</resources>
